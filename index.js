@@ -43,12 +43,12 @@ app.get("/getFields", (req, res) => {
     res.json({ volume1, time1, factor1 });
 });
 
-// app.post("/drop1", (req, res) => {
-//     drop1++;
-//     io.emit("getDrop1", drop1);
-//     console.log(drop1);
-//     res.json({ message: true });
-// });
+app.post("/drop1", (req, res) => {
+    drop1++;
+    io.emit("getDrop1", drop1);
+    console.log(drop1);
+    res.json({ message: true });
+});
 app.get("/doneSwero1", (req,res)=>{
     drop1 = 0
     clearInterval(testingInterval)
@@ -61,8 +61,8 @@ io.on("connection", (socket) => {
 
 server.listen(PORT, () => console.log(`SERVER STARTED AT PORT ${PORT}`));
 
-  testingInterval = setInterval(()=>{
-        drop1++;
-        io.emit("getDrop1", drop1);
-        console.log(drop1)
-    }, 1000)
+//   testingInterval = setInterval(()=>{
+//         drop1++;
+//         io.emit("getDrop1", drop1);
+//         console.log(drop1)
+//     }, 1000)
