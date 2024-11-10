@@ -7,8 +7,9 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["*"], // Specify frontend origin
-        methods: ["GET", "POST"]
+        origin: "*", // Specify frontend origin
+        methods: ["GET", "POST"],
+        credentials:false
     }
 });
 const PORT = 8000;
@@ -17,8 +18,9 @@ let volume1 = 0;
 let time1 = 0;
 let factor1 = 0;
 let count = 0;
-let drop1 = 0;
+let drop1 = 30000;
 let testingInterval;
+app.use(cors({origin:"*"}))
 app.use(express.json());
 
 

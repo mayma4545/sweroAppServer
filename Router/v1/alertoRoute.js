@@ -34,6 +34,7 @@ alertoRoute.route("/")
   device,
   
             } = req.body 
+            console.log(req.body)
             await alertoDB.create({sweroVolume, timeToRun, dropFactor, calculatedDpm, totalDropNeeded, userEmployee, patientId,
                                    sweroName, sweroSize, sweroType, patientFirstname, patientMiddlename, patientLastname, startTime,endTime,
                                    totalDrops, sweroVolume, device,sweroType
