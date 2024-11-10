@@ -18,7 +18,7 @@ let volume1 = 0;
 let time1 = 0;
 let factor1 = 0;
 let count = 0;
-let drop1 = 30000;
+let drop1 = 0;
 let testingInterval;
 app.use(cors({origin:"*"}))
 app.use(express.json());
